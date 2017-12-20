@@ -205,7 +205,8 @@ int SLE::FixedPointIteration()
 		for (int i = 0; i < _size; ++i)
 			if (abs(lastResult[i] - currentResult[i]) > normV)
 				normV = abs(lastResult[i] - currentResult[i]);
-		if (normV <= (1 - norm) / norm * _eps)
+        /* if (normV <= (1 - norm) / norm * _eps )*/
+        if (normV <= _eps)
 			break;
 		std::swap(lastResult, currentResult);
 	}
