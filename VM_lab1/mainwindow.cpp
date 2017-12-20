@@ -96,7 +96,7 @@ void MainWindow::run()
         for (int j = 0; j < size + 1; ++j)
            matrix[i][j] = (ui->tableWidget->item(i, j)->text()).toDouble();
     }
-
+    s->resize(size);
     s->ManualInput(matrix);
     s->resetResult();
 
@@ -161,7 +161,7 @@ void MainWindow::run()
     for (int i = 0; i < size; ++i)
         horizontalHeader.append(str + QString::number(i));
 
-    horizontalHeader.append("time");
+    //horizontalHeader.append("time");
 
     model->setHorizontalHeaderLabels(horizontalHeader);
     model->setVerticalHeaderLabels(verticalHeader);
@@ -175,8 +175,8 @@ void MainWindow::run()
             item = new QStandardItem(QString::number(result[GAUSS][j]));
             model->setItem(st, j, item);
         }
-        item = new QStandardItem(QString::number(time[GAUSS]));
-        model->setItem(st, size, item);
+        //item = new QStandardItem(QString::number(time[GAUSS]));
+        //model->setItem(st, size, item);
         st++;
     }
     if (ui->method_2->isChecked())
@@ -186,8 +186,8 @@ void MainWindow::run()
             item = new QStandardItem(QString::number(result[CRAMER][j]));
             model->setItem(st, j, item);
         }
-        item = new QStandardItem(QString::number(time[CRAMER]));
-        model->setItem(st, size, item);
+        //item = new QStandardItem(QString::number(time[CRAMER]));
+        //model->setItem(st, size, item);
         st++;
     }
     if (ui->method_3->isChecked())
@@ -197,8 +197,8 @@ void MainWindow::run()
             item = new QStandardItem(QString::number(result[FIXEDPOINT][j]));
             model->setItem(st, j, item);
         }
-        item = new QStandardItem(QString::number(time[FIXEDPOINT]));
-        model->setItem(st, size, item);
+        //item = new QStandardItem(QString::number(time[FIXEDPOINT]));
+        //model->setItem(st, size, item);
         st++;
     }
     if (ui->method_4->isChecked())
@@ -208,8 +208,8 @@ void MainWindow::run()
             item = new QStandardItem(QString::number(result[SEIDEL][j]));
             model->setItem(st, j, item);
         }
-        item = new QStandardItem(QString::number(time[SEIDEL]));
-        model->setItem(st, size, item);
+        //item = new QStandardItem(QString::number(time[SEIDEL]));
+        //model->setItem(st, size, item);
         st++;
     }
     if (ui->method_5->isChecked())
@@ -219,8 +219,8 @@ void MainWindow::run()
             item = new QStandardItem(QString::number(result[RELAXATION][j]));
             model->setItem(st, j, item);
         }
-        item = new QStandardItem(QString::number(time[RELAXATION]));
-        model->setItem(st, size, item);
+        //item = new QStandardItem(QString::number(time[RELAXATION]));
+        //model->setItem(st, size, item);
         st++;
     }
 
