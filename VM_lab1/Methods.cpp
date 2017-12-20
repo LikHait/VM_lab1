@@ -60,19 +60,19 @@ void SLE::AutomaticGeneration()
 void SLE::GenerateSuitableMatrix()
 {
 	AutomaticGeneration();
-	if (_prevalence)
+	if (_symmetric)
 	for (int i = 0; i < _size; ++i)
+        for (int j = 0; j < _size; ++j)
+			if (i > j)
+				_matrix[j][i] = _matrix[i][j];
+    if (_prevalence)
+    for (int i = 0; i < _size; ++i)
     {
         double sum = 0;
         for (int j = 0; j < _size; ++j)
             sum += _matrix[i][j];
         _matrix[i][i] += sum;
     }
-	if (_symmetric)
-	for (int i = 0; i < _size; ++i)
-        for (int j = 0; j < _size; ++j)
-			if (i > j)
-				_matrix[j][i] = _matrix[i][j];
 }
 
 //methods
