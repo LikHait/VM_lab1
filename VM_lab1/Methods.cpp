@@ -345,7 +345,7 @@ bool SLE::checkDiagonalPredominance(vector<vector<double>> matrix)
 		{
 			sum += abs(matrix[i][j]);
 		}
-		if (sum >= 2 * abs(matrix[i][i]))
+        if (sum > 2 * abs(matrix[i][i]))
 			return false;
 	}
 	return true;
