@@ -270,11 +270,11 @@ double SLE::GetDeterminant(vector<vector<double>> matrix)
 {
 	double determinant = 1;
 
-	for (int col = 0; col < _size; ++col)
+    for (int col = 0; col < matrix.size(); ++col)
 	{
 		int pivot_index = -1;
 		double pivot_value = 0;
-		for (int j = col; j < _size; ++j)
+        for (int j = col; j <  matrix.size(); ++j)
 		{
 			if (abs(matrix[j][col]) > pivot_value)
 			{
@@ -294,12 +294,12 @@ double SLE::GetDeterminant(vector<vector<double>> matrix)
 			determinant *= -1;
 		}
 
-		for (int j = col + 1; j < _size; j++)
+        for (int j = col + 1; j <  matrix.size(); j++)
 		{
 			if (abs(matrix[j][col]) < DBL_EPSILON)
 				continue;
 			double tmp = matrix[j][col] / matrix[col][col];
-			for (int k = col; k < _size; k++)
+            for (int k = col; k <  matrix.size(); k++)
 			{
 				matrix[j][k] -= matrix[col][k] * tmp;
 			}
@@ -321,7 +321,7 @@ bool SLE::isPositiv(vector<vector<double>> matrix)
 			for (int k = 0; k < i; ++k)
 				tmp[j][k] = matrix[j][k];
 		}
-		if (GetDeterminant(matrix) <= 0)
+        if (GetDeterminant(tmp) <= 0)
 			return false;
 	}
 	return true;
