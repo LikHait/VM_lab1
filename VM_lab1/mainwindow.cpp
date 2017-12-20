@@ -98,6 +98,7 @@ void MainWindow::run()
     }
 
     s->ManualInput(matrix);
+    s->resetResult();
 
     if (ui->method->isChecked())
     {

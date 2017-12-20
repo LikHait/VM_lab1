@@ -350,3 +350,10 @@ bool SLE::checkDiagonalPredominance(vector<vector<double>> matrix)
 	}
 	return true;
 }
+
+void SLE::resetResult()
+{
+    for (int i = 0; i < _size; ++i)
+        for (int j = 0; j < _size; ++j)
+            _result[i][j] = 0;
+}

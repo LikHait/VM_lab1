@@ -41,6 +41,7 @@ public:
 	bool isPositiv(vector<vector<double>> matrix);
 	bool isSymmetric(vector<vector<double>> matrix);
 	bool checkDiagonalPredominance(vector<vector<double>> matrix);
+    void resetResult();
 
 	//change bool
 	void prevalenceToTrue() { _prevalence = true; }
